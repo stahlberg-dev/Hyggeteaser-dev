@@ -8,10 +8,10 @@ export function swiperPageSlider() {
 
         const aboutSlider = new Swiper('.page__slider', {
             modules: [Navigation, Pagination],
-            /* effect: 'fade',
+            effect: 'fade',
             fadeEffect: {
                 crossFade: true,
-            }, */
+            },
             autoplay: {
                 delay: 3000,
             },
