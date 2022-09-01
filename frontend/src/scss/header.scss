@@ -1,0 +1,23 @@
+.header {
+    width: 100%;
+    @include adaptiveValue("height", 50px, 100px, $mobile, $tablet);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: $primaryColor;
+
+    &__container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__logo {
+        
+    }
+
+    &__phone {
+        flex: 0 0 auto;
+    }
+}

@@ -1,0 +1,25 @@
+@use "sass:math";
+
+$primaryFontFamily: Muller;
+$secondaryFontFamily: TTNorms;
+$primaryColor: #D24318;
+$secondaryColor: #FFF;
+$thirdColor: #101010;
+
+$minWidth: 320px;
+$maxContentWidth: 1170px;
+$containerPadding: 15px;
+
+$maxContainerWidth: $maxContentWidth + $containerPadding * 2; 
+
+$tablet: $maxContainerWidth + 0.02px;
+$mobile: 768.02px;
+
+@import "basic_components/reset.scss";
+@import "fonts.scss";
+@import "basic_components/mixins.scss";
+@import "basic_components/common_styles.scss";
+@import "../../node_modules/swiper/swiper.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "main_page.scss";

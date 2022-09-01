@@ -1,0 +1,198 @@
+.page {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+
+    &__about {
+        z-index: 10;
+        
+        @media (min-width: $mobile) {
+            flex: 0 0 50%;
+        }
+    }
+
+    &__slider {
+        position: relative;
+        min-width: 0;
+        overflow: hidden;
+        
+        @media (min-width: $mobile) {
+            flex: 0 0 50%;
+        }
+    }
+   
+    &__slider-wrapper {
+
+    }
+
+    &__slide {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &__slide-image {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 101%;
+    }
+
+    &__slider-pagination {
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        z-index: 5;
+
+        @media (min-width: $mobile) {
+            bottom: 10%;
+        }
+
+        .swiper-pagination-bullet {
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: $primaryColor;
+            opacity: 0.5;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            &:active {
+                opacity: 1;
+            }
+
+
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+    }
+}
+
+.about {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+
+    @media (min-width: $mobile) {
+        width: auto;
+        height: auto;
+        position: static;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0);
+        background-image: url("../img/about/background.jpg");
+        pointer-events: auto;
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        min-width: $minWidth;
+        height: 100%;
+        margin: 0 auto;
+        padding: 20px $containerPadding 45px;
+        color: $secondaryColor;
+        
+        @media (min-width: $mobile) {
+            justify-content: center;
+            max-width: calc($maxContainerWidth / 2);
+            margin: 0 0 0 auto;
+            padding-top: 0;
+            padding-bottom: 0;
+            @include adaptiveValue("padding-right", $containerPadding, 60px, $mobile, $tablet);
+            color: $thirdColor;
+        }
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        line-height: 1.2;
+        font-size: 32px;
+        font-weight: 700;
+
+        @media (min-width: $mobile) {
+            margin-bottom: 30px;
+            @include adaptiveValue("font-size", 32px, 40px, $mobile, $tablet);
+        }
+    }
+
+    &__presentation {
+        flex: 1 1 auto;
+        font-size: 24px;
+        font-weight: 500;
+
+        @media (min-width: $mobile) {
+            flex: 0 0 auto;
+            margin-bottom: 30px;
+            line-height: 26px;
+            font-size: 26px;
+        }
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 58px;
+        background-color: $primaryColor;
+        text-transform: uppercase;
+        font-family: $secondaryFontFamily;
+        line-height: 24px;
+        font-size: 20px;
+        font-weight: 500;
+        color: $secondaryColor;
+        transition: background-color 0.3s ease;
+        pointer-events: auto;
+
+        @media (min-width: $mobile) {
+            width: 228px;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: rgb(210, 67, 24, 0.6);
+            }
+        }
+
+        &:active {
+            background-color: rgb(210, 67, 24, 0.6);
+        }
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.7097 3.6545C20.7097 3.6545 22.6523 2.897 22.4904 4.73664C22.4365 5.49415 21.9508 8.1454 21.573 11.0131L20.278 19.5079C20.278 19.5079 20.17 20.7524 19.1987 20.9688C18.2273 21.1852 16.7704 20.2113 16.5005 19.9949C16.2847 19.8326 12.4534 17.3977 11.1043 16.2074C10.7265 15.8827 10.2948 15.2335 11.1582 14.476L16.8244 9.06525C17.4719 8.41595 18.1194 6.90095 15.4213 8.7406L7.86655 13.8808C7.86655 13.8808 7.00315 14.4219 5.3843 13.9349L1.87671 12.8527C1.87671 12.8527 0.581605 12.0411 2.79408 11.2295C8.19035 8.68645 14.8278 6.0893 20.7097 3.6545Z' fill='white'/%3E%3C/svg%3E");
+        }
+
+    }
+}
