@@ -1,6 +1,6 @@
 import Swiper, { Pagination, EffectFade, Autoplay} from 'swiper';
 
-// ----- About slider ------------------------------------------------------------------------
+// ----- Page slider ------------------------------------------------------------------------
 
 export function swiperPageSlider() {
     
@@ -9,7 +9,7 @@ export function swiperPageSlider() {
         const aboutSlider = new Swiper('.page__slider', {
             modules: [Pagination, EffectFade, Autoplay],
             autoplay: {
-                delay: 3000,
+                delay: 4000,
                 disableOnInteraction: false,
             },
             effect: 'fade',
@@ -18,10 +18,11 @@ export function swiperPageSlider() {
             },
             observer: true,
             observeParents: true,
+            observeSlideChildren: true,
             slidesPerView: 1,
             spaceBetween: 0,
             watchOverflow: true,
-            speed: 1000,
+            speed: 800,
             loop: true,
             preloadImages: false,
             pagination: {
